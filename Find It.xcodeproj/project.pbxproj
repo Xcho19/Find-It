@@ -13,6 +13,7 @@
 		EE40B8542792CA74009F3E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8522792CA74009F3E52 /* Main.storyboard */; };
 		EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8552792CA75009F3E52 /* Assets.xcassets */; };
 		EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */; };
+		EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EE40B8552792CA75009F3E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE40B8582792CA75009F3E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE40B85A2792CA75009F3E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		EE40B8402792CA74009F3E52 = {
 			isa = PBXGroup;
 			children = (
+				EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */,
 				EE40B84B2792CA74009F3E52 /* Find It */,
 				EE40B84A2792CA74009F3E52 /* Products */,
 			);
@@ -140,6 +143,7 @@
 			files = (
 				EE40B8512792CA74009F3E52 /* ViewController.swift in Sources */,
 				EE40B84D2792CA74009F3E52 /* AppDelegate.swift in Sources */,
+				EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */,
 				EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
