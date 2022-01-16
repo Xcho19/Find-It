@@ -8,9 +8,10 @@
 import UIKit
 
 class GameConfigurationTableViewController: UITableViewController {
-    
+        
     @IBOutlet var numberOfPlayersLabel: UILabel!
     @IBOutlet var numberOfPlayersStepper: UIStepper!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,10 @@ class GameConfigurationTableViewController: UITableViewController {
 
     func updateNumberOfPlayers() {
         numberOfPlayersLabel.text = "\(Int(numberOfPlayersStepper.value))"
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
     }
     
     @IBAction func numberOfPlayersStepperValueChanged(_ sender: UIStepper) {
