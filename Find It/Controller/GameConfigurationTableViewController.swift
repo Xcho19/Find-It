@@ -12,7 +12,6 @@ class GameConfigurationTableViewController: UITableViewController {
     @IBOutlet var numberOfPlayersLabel: UILabel!
     @IBOutlet var numberOfPlayersStepper: UIStepper!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,4 +28,10 @@ class GameConfigurationTableViewController: UITableViewController {
         updateNumberOfPlayers()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let playerNamesTableViewController = segue.destination as? PlayerNamesTableViewController,
+            segue.identifier == "NumberOfPlayersSegue"
+        else { return }
+        playerNamesTableViewController.numberOfPlayerStepperValue = Int(numberOfPlayersStepper.value)
+    }
 }

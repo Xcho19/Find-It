@@ -146,7 +146,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Yna-xo-hSg" kind="presentation" id="Cy6-QR-ICM"/>
+                                            <segue destination="Yna-xo-hSg" kind="presentation" identifier="NumberOfPlayersSegue" id="Cy6-QR-ICM"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
