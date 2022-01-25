@@ -14,6 +14,9 @@
 		EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8552792CA75009F3E52 /* Assets.xcassets */; };
 		EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */; };
 		EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */; };
+		EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */; };
+		EE54085E27A051EB00AA3E29 /* AddPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54085D27A051EB00AA3E29 /* AddPlayerTableViewCell.swift */; };
+		EE54086027A0532200AA3E29 /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE54085F27A0532200AA3E29 /* Words.plist */; };
 		EE81DF3B27937B2000DFD3F6 /* PlayerNamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */; };
 		EE88C22D2794CE05003CDB38 /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */; };
 		EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */; };
@@ -29,6 +32,9 @@
 		EE40B8582792CA75009F3E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE40B85A2792CA75009F3E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurationTableViewController.swift; sourceTree = "<group>"; };
+		EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
+		EE54085D27A051EB00AA3E29 /* AddPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewCell.swift; sourceTree = "<group>"; };
+		EE54085F27A0532200AA3E29 /* Words.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
 		EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNamesTableViewController.swift; sourceTree = "<group>"; };
 		EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
 		EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				EE88C2302794D250003CDB38 /* Controller */,
+				EE4258B5279AD99800EFFBFA /* Model */,
 				EE40B84C2792CA74009F3E52 /* AppDelegate.swift */,
 				EE40B84E2792CA74009F3E52 /* SceneDelegate.swift */,
 				EE40B8522792CA74009F3E52 /* Main.storyboard */,
@@ -75,14 +82,32 @@
 			path = "Find It";
 			sourceTree = "<group>";
 		};
+		EE4258B5279AD99800EFFBFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EE54085C27A051DE00AA3E29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EE54085D27A051EB00AA3E29 /* AddPlayerTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EE88C2302794D250003CDB38 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EE54085C27A051DE00AA3E29 /* Cells */,
 				EE40B8502792CA74009F3E52 /* ViewController.swift */,
 				EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */,
 				EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */,
 				EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */,
 				EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */,
+				EE54085F27A0532200AA3E29 /* Words.plist */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -145,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE54086027A0532200AA3E29 /* Words.plist in Resources */,
 				EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */,
 				EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */,
 				EE40B8542792CA74009F3E52 /* Main.storyboard in Resources */,
@@ -159,9 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE40B8512792CA74009F3E52 /* ViewController.swift in Sources */,
+				EE54085E27A051EB00AA3E29 /* AddPlayerTableViewCell.swift in Sources */,
 				EE81DF3B27937B2000DFD3F6 /* PlayerNamesTableViewController.swift in Sources */,
 				EE88C22D2794CE05003CDB38 /* EnvironmentViewController.swift in Sources */,
 				EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */,
+				EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */,
 				EE40B84D2792CA74009F3E52 /* AppDelegate.swift in Sources */,
 				EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */,
 				EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */,
@@ -313,6 +341,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X949GH6N8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Find It/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -340,6 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3X949GH6N8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Find It/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

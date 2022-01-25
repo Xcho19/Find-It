@@ -7,13 +7,24 @@
 
 import UIKit
 
-class GameConfigurationTableViewController: UITableViewController {
-        
+class GameConfigurationTableViewController: UITableViewController, EnvironmentSelectionDelegate, DifficultySelectionDelegate {
+    
     @IBOutlet var numberOfPlayersLabel: UILabel!
     @IBOutlet var numberOfPlayersStepper: UIStepper!
     
+    @IBOutlet var selectedEnvironmentLabel: UILabel!
+    @IBOutlet var selectedDifficultyLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func didSelectEnvironment(environment: String) {
+        selectedEnvironmentLabel.text = environment
+    }
+    
+    func didSelectDifficulty(difficulty: String) {
+        selectedDifficultyLabel.text = difficulty
     }
 
     func updateNumberOfPlayers() {
@@ -28,10 +39,21 @@ class GameConfigurationTableViewController: UITableViewController {
         updateNumberOfPlayers()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let playerNamesTableViewController = segue.destination as? PlayerNamesTableViewController,
-            segue.identifier == "NumberOfPlayersSegue"
-        else { return }
-        playerNamesTableViewController.numberOfPlayerStepperValue = Int(numberOfPlayersStepper.value)
+    @IBSegueAction func openPlayerNames(coder: NSCoder) -> PlayerNamesTableViewController? {
+        let numberOfPlayers = Int(numberOfPlayersStepper.value)
+        return PlayerNamesTableViewController(coder: coder, numberOfPlayers: numberOfPlayers)
     }
+    
+    @IBSegueAction func openEnvironments(coder: NSCoder) -> EnvironmentViewController? {
+       let environmentViewController = EnvironmentViewController(coder: coder)
+        environmentViewController?.delegate = self
+        return environmentViewController
+    }
+
+    @IBSegueAction func openDifficulties(coder: NSCoder) -> DifficultyViewController? {
+       let difficultyViewController = DifficultyViewController(coder: coder)
+        difficultyViewController?.delegate = self
+        return difficultyViewController
+    }
+    
 }

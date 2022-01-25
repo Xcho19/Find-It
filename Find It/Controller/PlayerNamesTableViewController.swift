@@ -7,27 +7,44 @@
 
 import UIKit
 
+protocol PlayerNamesDelegate: AnyObject {
+    func didTapSave(playernames: [String])
+}
+
 class PlayerNamesTableViewController: UITableViewController {
     
-    var numberOfPlayerStepperValue: Int?
+    @IBOutlet var saveButton: UIBarButtonItem!
+    
+    let numberOfPlayers: Int
+    
+    init?(coder: NSCoder, numberOfPlayers: Int) {
+        self.numberOfPlayers = numberOfPlayers
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveButton.isEnabled = false
+        
+        tableView.reloadData()
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfPlayerStepperValue ?? 2
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
+        -> Int { numberOfPlayers }
+    
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         tableView.dequeueReusableCell(withIdentifier: "AddPlayerTableViewCell", for: indexPath)
+     }
+    @IBAction func playerNameEdited(_ sender: UITextField) {
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
     }
-    */
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true)
     }
