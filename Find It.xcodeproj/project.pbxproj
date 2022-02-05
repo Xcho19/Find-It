@@ -16,10 +16,14 @@
 		EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */; };
 		EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */; };
 		EE54085E27A051EB00AA3E29 /* AddPlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54085D27A051EB00AA3E29 /* AddPlayerTableViewCell.swift */; };
-		EE54086027A0532200AA3E29 /* Words.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE54085F27A0532200AA3E29 /* Words.plist */; };
+		EE54086027A0532200AA3E29 /* Home.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE54085F27A0532200AA3E29 /* Home.plist */; };
+		EE67C11A27ABF0B60058EA13 /* HomeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */; };
 		EE81DF3B27937B2000DFD3F6 /* PlayerNamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */; };
 		EE88C22D2794CE05003CDB38 /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */; };
 		EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */; };
+		EEA846DD27A327E800F63B3A /* Park(Street).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DC27A327E800F63B3A /* Park(Street).plist */; };
+		EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DE27A328BB00F63B3A /* School(University).plist */; };
+		EEA846E127A3290000F63B3A /* Hotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846E027A3290000F63B3A /* Hotel.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +38,14 @@
 		EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
 		EE54085D27A051EB00AA3E29 /* AddPlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlayerTableViewCell.swift; sourceTree = "<group>"; };
-		EE54085F27A0532200AA3E29 /* Words.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Words.plist; sourceTree = "<group>"; };
+		EE54085F27A0532200AA3E29 /* Home.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Home.plist; sourceTree = "<group>"; };
+		EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnvironment.swift; sourceTree = "<group>"; };
 		EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNamesTableViewController.swift; sourceTree = "<group>"; };
 		EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
 		EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		EEA846DC27A327E800F63B3A /* Park(Street).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Park(Street).plist"; sourceTree = "<group>"; };
+		EEA846DE27A328BB00F63B3A /* School(University).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "School(University).plist"; sourceTree = "<group>"; };
+		EEA846E027A3290000F63B3A /* Hotel.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Hotel.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +80,9 @@
 			children = (
 				EE88C2302794D250003CDB38 /* Controller */,
 				EE4258B5279AD99800EFFBFA /* Model */,
-				EE40B84C2792CA74009F3E52 /* AppDelegate.swift */,
+				EEA846DB27A3277E00F63B3A /* Property Lists */,
 				EE40B84E2792CA74009F3E52 /* SceneDelegate.swift */,
+				EE40B84C2792CA74009F3E52 /* AppDelegate.swift */,
 				EE40B8522792CA74009F3E52 /* Main.storyboard */,
 				EE40B8552792CA75009F3E52 /* Assets.xcassets */,
 				EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */,
@@ -86,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */,
+				EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,9 +117,19 @@
 				EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */,
 				EE81DF3A27937B2000DFD3F6 /* PlayerNamesTableViewController.swift */,
 				EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */,
-				EE54085F27A0532200AA3E29 /* Words.plist */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		EEA846DB27A3277E00F63B3A /* Property Lists */ = {
+			isa = PBXGroup;
+			children = (
+				EE54085F27A0532200AA3E29 /* Home.plist */,
+				EEA846E027A3290000F63B3A /* Hotel.plist */,
+				EEA846DC27A327E800F63B3A /* Park(Street).plist */,
+				EEA846DE27A328BB00F63B3A /* School(University).plist */,
+			);
+			path = "Property Lists";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,10 +190,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE54086027A0532200AA3E29 /* Words.plist in Resources */,
+				EE54086027A0532200AA3E29 /* Home.plist in Resources */,
+				EEA846DD27A327E800F63B3A /* Park(Street).plist in Resources */,
 				EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */,
+				EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */,
 				EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */,
 				EE40B8542792CA74009F3E52 /* Main.storyboard in Resources */,
+				EEA846E127A3290000F63B3A /* Hotel.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +215,7 @@
 				EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */,
 				EE40B84D2792CA74009F3E52 /* AppDelegate.swift in Sources */,
 				EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */,
+				EE67C11A27ABF0B60058EA13 /* HomeEnvironment.swift in Sources */,
 				EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

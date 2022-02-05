@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-protocol PlayerNameDelegate: AnyObject {
-
-}
-
 final class AddPlayerTableViewCell: UITableViewCell {
-    
     @IBOutlet var playerNameTextField: UITextField!
 }
