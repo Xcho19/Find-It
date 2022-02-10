@@ -9,10 +9,9 @@ import Foundation
 
 
 struct GameCofiguration {
-    
     var numberOfPlayers: Int
-    var playerNames: String
+    var playerNames: [String]
     
-    var enviroments: String
-    var difficulties: String
+    var enviroment: String
+    var difficulty: String
 }

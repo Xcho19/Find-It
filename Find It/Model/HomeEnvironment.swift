@@ -15,11 +15,9 @@ struct HomeEnvironment: Codable {
     static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
     static let archiveURL = documentsDirectory.appendingPathComponent("Home").appendingPathExtension("plist")
     
-   static func loadHomeWords() -> [HomeEnvironment]? {
+    static func loadHomeWords() -> [HomeEnvironment]? {
         guard let codedWords = try? Data(contentsOf: archiveURL) else { return nil }
         let propertyListDecoder = PropertyListDecoder()
-        return try?propertyListDecoder.decode(Array<HomeEnvironment>.self, from: codedWords)
+        return try? propertyListDecoder.decode(Array<HomeEnvironment>.self, from: codedWords)
     }
 }
-
-

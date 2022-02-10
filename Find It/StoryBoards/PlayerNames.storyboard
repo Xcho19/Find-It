@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i1A-x5-SAZ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Player Names-->
+        <scene sceneID="VVP-Af-JBf">
+            <objects>
+                <viewController id="2B3-jG-cYc" customClass="PlayerNamesViewController" customModule="Find_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7am-PC-cCY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dTx-U6-9ON">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4t-y3-ajt">
+                                        <rect key="frame" x="8" y="8" width="398" height="758"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hfy-tq-Tez"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dTx-U6-9ON" firstAttribute="trailing" secondItem="Hfy-tq-Tez" secondAttribute="trailing" id="3ip-pr-pyd"/>
+                            <constraint firstItem="dTx-U6-9ON" firstAttribute="leading" secondItem="Hfy-tq-Tez" secondAttribute="leading" id="RXb-P3-8eL"/>
+                            <constraint firstItem="dTx-U6-9ON" firstAttribute="top" secondItem="Hfy-tq-Tez" secondAttribute="top" id="XfZ-nW-1TM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="dTx-U6-9ON" secondAttribute="bottom" id="Y9Y-Bs-HWd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Player Names" id="W1N-Jj-2yE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="x4R-sg-CJG">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="2B3-jG-cYc" id="bun-8a-Cko"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="p2A-xt-Hh0">
+                            <connections>
+                                <action selector="didTapAddButton:" destination="2B3-jG-cYc" id="Ks5-lC-nfC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containerStackView" destination="dTx-U6-9ON" id="GE8-FV-T9c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sUf-aP-XbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1022" y="-329"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jxs-fa-bAt">
+            <objects>
+                <navigationController id="i1A-x5-SAZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GzV-No-nXf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2B3-jG-cYc" kind="relationship" relationship="rootViewController" destinationCreationSelector="openPlayerNamesWithCoder:" id="pMU-aF-3OT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fz2-pt-As3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="-329"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
