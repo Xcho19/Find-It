@@ -39,9 +39,9 @@ class GameConfigurationTableViewController: UITableViewController, EnvironmentSe
         updateNumberOfPlayers()
     }
     
-    @IBSegueAction func openPlayerNames(coder: NSCoder) -> PlayerNamesTableViewController? {
+    @IBSegueAction func openPlayerNames(coder: NSCoder) -> PlayerNamesViewController? {
         let numberOfPlayers = Int(numberOfPlayersStepper.value)
-        return PlayerNamesTableViewController(coder: coder, numberOfPlayers: numberOfPlayers)
+        return PlayerNamesViewController(coder: coder, numberOfPlayers: numberOfPlayers)
     }
     
     @IBSegueAction func openEnvironments(coder: NSCoder) -> EnvironmentViewController? {

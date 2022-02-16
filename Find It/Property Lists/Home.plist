@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>hard</key>
+	<array>
+		<string>Rubber</string>
+		<string>Dice</string>
+		<string>Wall Clock</string>
+		<string>Tie</string>
+		<string>Hair Dryer</string>
+		<string>Lipstick</string>
+		<string>Gloves</string>
+		<string>Hummer</string>
+		<string>Pencil</string>
+		<string>Notebook</string>
+		<string>Crossword</string>
+		<string>Batteries</string>
+		<string>Ball</string>
+		<string>Needle</string>
+		<string>Clothes Iron</string>
+	</array>
+	<key>normal</key>
+	<array>
+		<string>Perfume</string>
+		<string>Shoe Wax</string>
+		<string>Baking Soda </string>
+		<string>Scissors</string>
+		<string>Phone Charger</string>
+		<string>Calculator</string>
+		<string>Mirror</string>
+		<string>Lighter</string>
+		<string>Candy</string>
+		<string>Wallet</string>
+		<string>Beanie / Hat</string>
+		<string>Salt Cellar</string>
+		<string>Pillow</string>
+		<string>Glasses</string>
+		<string>Earphones</string>
+	</array>
+	<key>easy</key>
+	<array>
+		<string>Sandals</string>
+		<string>Hair Brush</string>
+		<string>Remote Control</string>
+		<string>Picture</string>
+		<string>Ashtray</string>
+		<string>Handkerchief</string>
+		<string>Pen</string>
+		<string>Spoon</string>
+		<string>Cup</string>
+		<string>Plate</string>
+		<string>Toothpick</string>
+		<string>Toothpaste</string>
+		<string>Broom</string>
+		<string>Napkins</string>
+		<string>Dishwashing Liquid</string>
+	</array>
+</dict>
+</plist>
