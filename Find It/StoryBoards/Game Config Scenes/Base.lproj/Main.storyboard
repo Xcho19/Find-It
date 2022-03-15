@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,44 +16,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-bu-wcY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Background.png" id="BCb-wB-XW9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-bu-wcY">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIND IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-WD-omY">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="FIND IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-WD-omY">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="50"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" systemColor="opaqueSeparatorColor"/>
+                                        <size key="shadowOffset" width="0.0" height="4"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujS-Uj-Izd">
-                                        <rect key="frame" x="0.0" y="372" width="374" height="39.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" cornerStyle="medium">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujS-Uj-Izd">
+                                        <rect key="frame" x="0.0" y="370" width="374" height="71"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="Let's Go">
+                                                <fragment content="PLAY">
                                                     <attributes>
-                                                        <font key="NSFont" size="22" name="Helvetica"/>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="39" name="Helvetica"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="filled" title="PLAY" cornerStyle="large">
+                                            <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="fMC-wk-bvc" kind="presentation" id="rCe-7Y-1SF"/>
+                                            <segue destination="fMC-wk-bvc" kind="presentation" modalPresentationStyle="fullScreen" id="rCe-7Y-1SF"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="PRz-r8-RfF">
-                                        <rect key="frame" x="0.0" y="747" width="374" height="31"/>
+                                        <rect key="frame" x="0.0" y="735.5" width="374" height="42.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pw-AU-5qF">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="31"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pw-AU-5qF">
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="42.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Language"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Language">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                </buttonConfiguration>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-2N-adn">
-                                                <rect key="frame" x="196.5" y="0.0" width="177.5" height="31"/>
+                                                <rect key="frame" x="196.5" y="0.0" width="177.5" height="42.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Rules"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Rules">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -79,7 +95,7 @@
             <objects>
                 <tableViewController id="ln1-HA-uQc" customClass="GameConfigurationTableViewController" customModule="Find_It" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="flp-FF-DjW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <sections>
@@ -146,7 +162,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="vd4-bo-yly" kind="presentation" id="MNP-SI-OOn"/>
+                                            <segue destination="vd4-bo-yly" kind="showDetail" id="MNP-SI-OOn"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -186,7 +202,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="gxI-Ot-lmm" kind="presentation" id="REn-oB-R1N"/>
+                                            <segue destination="gxI-Ot-lmm" kind="showDetail" id="REn-oB-R1N"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="gQt-DK-LlL">
@@ -222,7 +238,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Td8-Zi-00Q" kind="presentation" id="P8g-zL-SWy"/>
+                                            <segue destination="Td8-Zi-00Q" kind="showDetail" id="P8g-zL-SWy"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -239,13 +255,18 @@
                                 <action selector="cancelButtonTapped:" destination="ln1-HA-uQc" id="35N-1I-d51"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Start" id="PT4-wV-hvh"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Start" id="PT4-wV-hvh">
+                            <connections>
+                                <segue destination="08h-91-s7N" kind="presentation" identifier="GamePlay" modalPresentationStyle="fullScreen" id="bWE-Pl-koA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="numberOfPlayersLabel" destination="PVx-lL-B3p" id="Hf3-LF-d9l"/>
                         <outlet property="numberOfPlayersStepper" destination="Y9a-q3-AXs" id="lCv-Qv-CMv"/>
                         <outlet property="selectedDifficultyLabel" destination="R9W-Yf-T1S" id="B9A-X2-8vz"/>
                         <outlet property="selectedEnvironmentLabel" destination="BUK-ig-qky" id="utS-gc-AbA"/>
+                        <outlet property="startButton" destination="PT4-wV-hvh" id="yGv-ru-Ilq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgH-HM-Xvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -255,25 +276,29 @@
         <!--Environments-->
         <scene sceneID="uQD-bJ-Ys0">
             <objects>
-                <viewControllerPlaceholder storyboardName="Environments" id="gxI-Ot-lmm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Environments" id="gxI-Ot-lmm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4cq-wA-zox"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kY0-xy-U1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3024" y="64"/>
+            <point key="canvasLocation" x="3011" y="202"/>
         </scene>
         <!--Difficulties-->
         <scene sceneID="FOM-Gh-dZJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Difficulties" id="Td8-Zi-00Q" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Difficulties" id="Td8-Zi-00Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="LWW-NS-CeV"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bY1-h6-IFX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="267"/>
+            <point key="canvasLocation" x="2999" y="233"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZGa-gT-jl2">
             <objects>
                 <navigationController id="fMC-wk-bvc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="04r-1R-QPA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -284,18 +309,32 @@
             </objects>
             <point key="canvasLocation" x="1101" y="64"/>
         </scene>
+        <!--GamePlay-->
+        <scene sceneID="Ezu-F9-d2m">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GamePlay" id="08h-91-s7N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRN-vx-Uiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2995" y="141"/>
+        </scene>
         <!--PlayerNames-->
         <scene sceneID="M08-q4-OFX">
             <objects>
-                <viewControllerPlaceholder storyboardName="PlayerNames" id="vd4-bo-yly" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="PlayerNames" id="vd4-bo-yly" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hbz-nj-Eiv"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRJ-mY-eYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3022" y="-147"/>
+            <point key="canvasLocation" x="3009" y="171"/>
         </scene>
     </scenes>
     <resources>
+        <image name="App Background.png" width="201.85153198242188" height="436.71615600585938"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

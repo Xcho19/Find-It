@@ -23,14 +23,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="58.5"/>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Easy">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="filled" title="Easy">
+                                            <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapDifficulty:" destination="4RJ-vq-Tp7" eventType="touchUpInside" id="C1C-5D-vQZ"/>
@@ -40,14 +34,8 @@
                                         <rect key="frame" x="0.0" y="70.5" width="200" height="59"/>
                                         <color key="tintColor" red="0.83491428550000002" green="0.69794617680000004" blue="0.2292137564" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Medium">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="filled" title="Medium">
+                                            <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapDifficulty:" destination="4RJ-vq-Tp7" eventType="touchUpInside" id="Mhd-yz-Lfn"/>
@@ -57,14 +45,8 @@
                                         <rect key="frame" x="0.0" y="141.5" width="200" height="58.5"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Hard">
-                                                    <attributes>
-                                                        <font key="NSFont" size="18" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <buttonConfiguration key="configuration" style="filled" title="Hard">
+                                            <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapDifficulty:" destination="4RJ-vq-Tp7" eventType="touchUpInside" id="48z-Ac-vx0"/>
@@ -77,8 +59,8 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXS-Vc-0nR">
-                                <rect key="frame" x="81" y="128" width="252.5" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <rect key="frame" x="67" y="128" width="280.5" height="47"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
