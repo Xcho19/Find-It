@@ -64,7 +64,7 @@ final class PlayerNamesViewController: UIViewController {
     private func fillTextFields() {
         for textField in textFields {
             textField.text = playerNames.first ?? ""
-            
+
             if playerNames != [] {
                 playerNames.removeFirst()
             }

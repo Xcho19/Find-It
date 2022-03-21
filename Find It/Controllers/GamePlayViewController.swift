@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GamePlayViewController: UIViewController {
+class GamePlayViewController: UIViewController, LeaderBoardTableViewControllerDelegate {
 
     @IBOutlet var showWordButton: UIButton!
     @IBOutlet var wordLabel: UILabel!
@@ -15,6 +15,7 @@ class GamePlayViewController: UIViewController {
 
     var newGameConfig = GameCofiguration()
     var usedWords = [String]()
+    var players: [Player] = []
 
     var timer: Timer?
     var totalTime = 300
@@ -42,7 +43,7 @@ class GamePlayViewController: UIViewController {
     private func timeFormatted(_ totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
-        
+
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
@@ -62,34 +63,42 @@ class GamePlayViewController: UIViewController {
 
         switch difficulty {
         case "Easy":
-            var randomWord = environmentWords.easy.randomElement()
-            while usedWords.contains(randomWord!) {
-                randomWord = environmentWords.easy.randomElement()
-            }
-            wordLabel.text = randomWord
-            usedWords.append(randomWord!)
+            getNewWord(from: environmentWords.easy)
         case "Medium":
-            var randomWord = environmentWords.medium.randomElement()
-            while usedWords.contains(randomWord!) {
-                randomWord = environmentWords.medium.randomElement()
-            }
-            wordLabel.text = randomWord
-            usedWords.append(randomWord!)
+            getNewWord(from: environmentWords.medium)
         case "Hard":
-            var randomWord = environmentWords.hard.randomElement()
-            while usedWords.contains(randomWord!) {
-                randomWord = environmentWords.hard.randomElement()
-            }
-            wordLabel.text = randomWord
-            usedWords.append(randomWord!)
+            getNewWord(from: environmentWords.hard)
         default:
             fatalError()
         }
     }
 
+    private func getNewWord(from words: [String]) {
+        if let randomWord = words.shuffled().first(where: {
+            !usedWords.contains($0)
+        }) {
+        usedWords.append(randomWord)
+        wordLabel.text = randomWord
+        } else {
+            wordLabel.text = "Out of words"
+        }
+    }
+
+    func didSelectPlayer(players: [Player]) {
+        self.players = players
+    }
+
+    @IBSegueAction func openLeaderboard(coder: NSCoder) -> LeaderBoardTableViewController? {
+        let leaderboardTableViewController = LeaderBoardTableViewController(coder: coder)
+        leaderboardTableViewController?.delegate = self
+        leaderboardTableViewController?.players = players
+
+        return leaderboardTableViewController
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         showWordButton.setTitle("Show Word", for: .normal)
         showWordButton.setTitle("", for: .highlighted)
     }
@@ -110,6 +119,7 @@ class GamePlayViewController: UIViewController {
         } else if showWordButton.titleLabel?.text == "Found It" {
             resetTimer()
             showWordButton.setTitle("Show Word", for: .normal)
+            performSegue(withIdentifier: "Leaderboard", sender: sender)
         }
     }
 

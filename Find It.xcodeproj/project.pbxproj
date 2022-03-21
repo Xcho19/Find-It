@@ -22,6 +22,7 @@
 		EE873E7627B588F50086C19F /* Difficulties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE873E7527B588F50086C19F /* Difficulties.storyboard */; };
 		EE88C22D2794CE05003CDB38 /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */; };
 		EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */; };
+		EE8B844327E7BE8600A0ABFF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B844227E7BE8600A0ABFF /* Player.swift */; };
 		EE952CB027B2F97400CBFD32 /* PlayerNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE952CAF27B2F97400CBFD32 /* PlayerNamesViewController.swift */; };
 		EEA846DD27A327E800F63B3A /* Park(Street).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DC27A327E800F63B3A /* Park(Street).plist */; };
 		EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DE27A328BB00F63B3A /* School(University).plist */; };
@@ -48,6 +49,7 @@
 		EE873E7527B588F50086C19F /* Difficulties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Difficulties.storyboard; sourceTree = "<group>"; };
 		EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
 		EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		EE8B844227E7BE8600A0ABFF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EE952CAF27B2F97400CBFD32 /* PlayerNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNamesViewController.swift; sourceTree = "<group>"; };
 		EEA846DC27A327E800F63B3A /* Park(Street).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Park(Street).plist"; sourceTree = "<group>"; };
 		EEA846DE27A328BB00F63B3A /* School(University).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "School(University).plist"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		EE4258B5279AD99800EFFBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE8B844227E7BE8600A0ABFF /* Player.swift */,
 				EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */,
 				EE37F32D27DC234700C96C95 /* Environment.swift */,
 			);
@@ -270,6 +273,7 @@
 				EE952CB027B2F97400CBFD32 /* PlayerNamesViewController.swift in Sources */,
 				EED0949727D66F6C00147C44 /* GamePlayViewController.swift in Sources */,
 				EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */,
+				EE8B844327E7BE8600A0ABFF /* Player.swift in Sources */,
 				EE2F287027DFBBD700C43AA3 /* LeaderBoardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

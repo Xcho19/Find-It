@@ -40,13 +40,7 @@ class GameConfigurationTableViewController: UITableViewController,
     }
 
     private func checkStartButton() {
-        if playerNames != [] &&
-            selectedEnvironmentLabel.text != "[Select an Environment]" &&
-            selectedDifficultyLabel.text != "[Select a Difficulty]" {
-            startButton.isEnabled = true
-        } else {
-            startButton.isEnabled = false
-        }
+        
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
