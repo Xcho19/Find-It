@@ -19,14 +19,18 @@ class GameConfigurationTableViewController: UITableViewController,
     @IBOutlet var startButton: UIBarButtonItem!
 
     var playerNames: [String] = []
+    var selectedEnvironment: String?
+    var selectedDifficulty: String?
 
     func didSelectEnvironment(environment: String) {
         selectedEnvironmentLabel.text = environment
+        selectedEnvironment = environment
         checkStartButton()
     }
 
     func didSelectDifficulty(difficulty: String) {
         selectedDifficultyLabel.text = difficulty
+        selectedDifficulty = difficulty
         checkStartButton()
     }
 
@@ -40,7 +44,13 @@ class GameConfigurationTableViewController: UITableViewController,
     }
 
     private func checkStartButton() {
-        
+        if playerNames != [] &&
+            selectedEnvironment != nil &&
+            selectedDifficulty != nil {
+            startButton.isEnabled = true
+        } else {
+            startButton.isEnabled = false
+        }
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
