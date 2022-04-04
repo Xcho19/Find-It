@@ -11,13 +11,13 @@ protocol DifficultySelectionDelegate: AnyObject {
     func didSelectDifficulty(difficulty: String)
 }
 
-class DifficultyViewController: UIViewController {
+final class DifficultyViewController: UIViewController {
+
+    // MARK: - Dependencies
 
     weak var delegate: DifficultySelectionDelegate?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    // MARK: - Callbacks
 
     @IBAction func didTapDifficulty(_ sender: UIButton) {
         let selectedDifficulty = sender.titleLabel?.text ?? ""

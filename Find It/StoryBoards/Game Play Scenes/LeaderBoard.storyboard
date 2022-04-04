@@ -54,10 +54,22 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="continueBarButtun" destination="cfR-lg-n2E" id="ceT-2K-LOk"/>
+                        <segue destination="r4I-AU-SED" kind="presentation" identifier="WinnerSegue" modalPresentationStyle="fullScreen" id="aPY-hf-kxN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLw-xd-ayd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1007.2463768115942" y="125.22321428571428"/>
+        </scene>
+        <!--Winner-->
+        <scene sceneID="x57-x3-VJ7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Winner" id="r4I-AU-SED" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rqp-ep-iHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vo9-vu-jH4">

@@ -12,20 +12,37 @@ protocol PlayerNamesViewControllerDelegate: AnyObject {
 }
 
 final class PlayerNamesViewController: UIViewController {
+    // MARK: - init
 
-    @IBOutlet var saveButton: UIBarButtonItem!
-    @IBOutlet var containerStackView: UIStackView!
+    init?(coder: NSCoder, numberOfPlayers: Int, playerNames: [String]) {
+        self.numberOfPlayers = numberOfPlayers
+        self.playerNames = playerNames
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("Unexpected Init")
+    }
+
+    // MARK: - Dependencies
 
     weak var delegate: PlayerNamesViewControllerDelegate?
 
-    let numberOfPlayers: Int
-    var playerNames: [String] = []
+    // MARK: - Model
+
+    private let numberOfPlayers: Int
+    private var playerNames: [String]
+
+    // MARK: - Subviews
+
+    @IBOutlet var saveButton: UIBarButtonItem!
+    @IBOutlet var containerStackView: UIStackView!
 
     private lazy var textFields: [UITextField] = {
         (0..<numberOfPlayers).map { _ in
             let textField = UITextField()
             textField.placeholder = "Enter Player Name"
-            textField.borderStyle = .line
+            textField.borderStyle = .roundedRect
             textField.addTarget(
                 self,
                 action: #selector(editingChanged(textField:)),
@@ -36,14 +53,7 @@ final class PlayerNamesViewController: UIViewController {
         }
     }()
 
-    init?(coder: NSCoder, numberOfPlayers: Int) {
-        self.numberOfPlayers = numberOfPlayers
-        super.init(coder: coder)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("Unexpected Init")
-    }
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,26 +63,24 @@ final class PlayerNamesViewController: UIViewController {
         fillTextFields()
     }
 
-    @objc final private func editingChanged(textField: UITextField) {
-        if textFields.allSatisfy({ $0.text?.isEmpty == false }) {
-            saveButton.isEnabled = true
-        } else {
-            saveButton.isEnabled = false
-        }
-    }
+    // MARK: - Helpers
 
     private func fillTextFields() {
         for textField in textFields {
             textField.text = playerNames.first ?? ""
 
-            if playerNames != [] {
+            if !playerNames.isEmpty {
                 playerNames.removeFirst()
             }
         }
 
-        if textFields.allSatisfy({ $0.text?.isEmpty == false }) {
-            saveButton.isEnabled = true
-        }
+        saveButton.isEnabled = textFields.allSatisfy({ $0.text?.isEmpty == false })
+    }
+
+    // MARK: - Callbacks
+
+    @objc final private func editingChanged(textField: UITextField) {
+        saveButton.isEnabled = textFields.allSatisfy({ $0.text?.isEmpty == false })
     }
 
     @IBAction func didTapAddButton(_ sender: Any) {

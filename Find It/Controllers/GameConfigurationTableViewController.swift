@@ -7,68 +7,55 @@
 
 import UIKit
 
-class GameConfigurationTableViewController: UITableViewController,
-                                            EnvironmentSelectionDelegate,
-                                            DifficultySelectionDelegate,
-                                            PlayerNamesViewControllerDelegate {
+final class GameConfigurationTableViewController: UITableViewController {
 
-    @IBOutlet var numberOfPlayersLabel: UILabel!
-    @IBOutlet var numberOfPlayersStepper: UIStepper!
-    @IBOutlet var selectedEnvironmentLabel: UILabel!
-    @IBOutlet var selectedDifficultyLabel: UILabel!
-    @IBOutlet var startButton: UIBarButtonItem!
+    // MARK: - Model
 
-    var playerNames: [String] = []
-    var selectedEnvironment: String?
-    var selectedDifficulty: String?
+    private var playerNames: [String] = []
+    private var selectedEnvironment: String?
+    private var selectedDifficulty: String?
 
-    func didSelectEnvironment(environment: String) {
-        selectedEnvironmentLabel.text = environment
-        selectedEnvironment = environment
-        checkStartButton()
-    }
+    // MARK: - Subviews
 
-    func didSelectDifficulty(difficulty: String) {
-        selectedDifficultyLabel.text = difficulty
-        selectedDifficulty = difficulty
-        checkStartButton()
-    }
+    @IBOutlet private var numberOfPlayersLabel: UILabel!
+    @IBOutlet private var numberOfPlayersStepper: UIStepper!
+    @IBOutlet private var selectedEnvironmentLabel: UILabel!
+    @IBOutlet private var selectedDifficultyLabel: UILabel!
+    @IBOutlet private var startButton: UIBarButtonItem!
 
-    func didAddPlayers(names: [String]) {
-        playerNames = names
-        checkStartButton()
-    }
+    // MARK: - Helpers
 
     private func updateNumberOfPlayers() {
         numberOfPlayersLabel.text = "\(Int(numberOfPlayersStepper.value))"
     }
 
     private func checkStartButton() {
-        if playerNames != [] &&
-            selectedEnvironment != nil &&
-            selectedDifficulty != nil {
-            startButton.isEnabled = true
-        } else {
-            startButton.isEnabled = false
-        }
+        startButton.isEnabled = !playerNames.isEmpty &&
+        selectedEnvironment != nil &&
+        selectedDifficulty != nil
+    }
+
+    // MARK: - Callbacks
+
+    @IBAction func numberOfPlayersStepperValueChanged(_ sender: UIStepper) {
+        updateNumberOfPlayers()
+        startButton.isEnabled = false
     }
 
     @IBAction func cancelButtonTapped(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
 
-    @IBAction func numberOfPlayersStepperValueChanged(_ sender: UIStepper) {
-        updateNumberOfPlayers()
-    }
+    // MARK: - Segues
 
     @IBSegueAction func openPlayerNames(coder: NSCoder) -> PlayerNamesViewController? {
         let numberOfPlayers = Int(numberOfPlayersStepper.value)
         let playerNamesViewController = PlayerNamesViewController(
             coder: coder,
-            numberOfPlayers: numberOfPlayers
+            numberOfPlayers: numberOfPlayers,
+            playerNames: playerNames
         )
         playerNamesViewController?.delegate = self
-        playerNamesViewController?.playerNames = playerNames
 
         return playerNamesViewController
     }
@@ -89,17 +76,39 @@ class GameConfigurationTableViewController: UITableViewController,
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GamePlay" {
-            guard let navigationController = segue.destination as? UINavigationController,
-                  let gamePlayViewController = navigationController.topViewController as? GamePlayViewController
+            guard
+                let navigationController = segue.destination as? UINavigationController,
+                let gamePlayViewController = navigationController.topViewController as? GamePlayViewController
             else { fatalError() }
 
-            let newGameConfig = GameCofiguration(
+            gamePlayViewController.newGameConfig = .init(
                 numberOfPlayers: Int(numberOfPlayersStepper.value),
                 playerNames: playerNames,
                 environment: selectedEnvironmentLabel.text!,
                 difficulty: selectedDifficultyLabel.text!
             )
-            gamePlayViewController.newGameConfig = newGameConfig
         }
+    }
+}
+extension GameConfigurationTableViewController: EnvironmentSelectionDelegate {
+    func didSelectEnvironment(environment: String) {
+        selectedEnvironmentLabel.text = environment
+        selectedEnvironment = environment
+        checkStartButton()
+    }
+}
+
+extension GameConfigurationTableViewController: DifficultySelectionDelegate {
+    func didSelectDifficulty(difficulty: String) {
+        selectedDifficultyLabel.text = difficulty
+        selectedDifficulty = difficulty
+        checkStartButton()
+    }
+}
+
+extension GameConfigurationTableViewController: PlayerNamesViewControllerDelegate {
+    func didAddPlayers(names: [String]) {
+        playerNames = names
+        checkStartButton()
     }
 }

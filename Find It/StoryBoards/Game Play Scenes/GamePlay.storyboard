@@ -30,14 +30,14 @@
                                     </label>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HL-Zi-ZKQ">
                                         <rect key="frame" x="62" y="248" width="250" height="250"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="lUQ-cs-oPp"/>
                                             <constraint firstAttribute="width" constant="250" id="ttd-Fb-mde"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Button">
-                                            <color key="baseBackgroundColor" red="0.083816495089999998" green="0.43866784790000002" blue="0.1187231867" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Show Word"/>
                                         <connections>
                                             <action selector="didTapWordButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="taA-6Y-dYe"/>
                                         </connections>
@@ -66,16 +66,12 @@
                                 <action selector="cancelButtonTapped:" destination="Y6W-OH-hqX" id="EYc-UV-oQ5"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Leaderboard" id="bDT-Bu-1g2">
-                            <connections>
-                                <segue destination="Wdf-C2-WWs" kind="presentation" identifier="Leaderboard" id="GwZ-hu-YWm"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="showWordButton" destination="4HL-Zi-ZKQ" id="Ocg-qE-ZZB"/>
                         <outlet property="timerLabel" destination="hqD-7y-84Y" id="jAX-Fo-bEa"/>
                         <outlet property="wordLabel" destination="IlK-vg-5Xi" id="qB9-qw-qSl"/>
+                        <segue destination="Wdf-C2-WWs" kind="presentation" identifier="Leaderboard" modalPresentationStyle="fullScreen" id="eXT-gQ-ymc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -88,7 +84,7 @@
                 <viewControllerPlaceholder storyboardName="LeaderBoard" id="Wdf-C2-WWs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0k4-zp-MxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="98"/>
+            <point key="canvasLocation" x="1732" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfT-Cw-PTI">
@@ -112,6 +108,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
