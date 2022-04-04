@@ -11,13 +11,13 @@ protocol EnvironmentSelectionDelegate: AnyObject {
     func didSelectEnvironment(environment: String)
 }
 
-class EnvironmentViewController: UIViewController {
+final class EnvironmentViewController: UIViewController {
+
+    // MARK: - Dependencies
 
     weak var delegate: EnvironmentSelectionDelegate?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    // MARK: - Callbacks
 
     @IBAction func didTapEnvironment(_ sender: UIButton) {
         delegate?.didSelectEnvironment(environment: sender.titleLabel?.text ?? "")

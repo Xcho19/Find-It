@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Initial View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Find_It" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitialViewController" customModule="Find_It" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,19 +20,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-bu-wcY">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2pV-bu-wcY">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="FIND IT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-WD-omY">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="50"/>
+                                        <rect key="frame" x="63" y="0.0" width="248.5" height="92"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="65"/>
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" systemColor="opaqueSeparatorColor"/>
-                                        <size key="shadowOffset" width="0.0" height="4"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujS-Uj-Izd">
-                                        <rect key="frame" x="0.0" y="370" width="374" height="71"/>
+                                        <rect key="frame" x="45" y="378.5" width="284" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ujS-Uj-Izd" secondAttribute="height" multiplier="4:1" id="lf3-aA-Mrn"/>
+                                        </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button">
                                             <attributedString key="attributedTitle">
@@ -46,28 +48,24 @@
                                             </attributedString>
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
-                                        <buttonConfiguration key="configuration" style="filled" title="PLAY" cornerStyle="large">
+                                        <buttonConfiguration key="configuration" style="filled" title="PLAY" cornerStyle="small">
                                             <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="fMC-wk-bvc" kind="presentation" modalPresentationStyle="fullScreen" id="rCe-7Y-1SF"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="PRz-r8-RfF">
-                                        <rect key="frame" x="0.0" y="735.5" width="374" height="42.5"/>
+                                        <rect key="frame" x="81" y="735.5" width="212.5" height="42.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pw-AU-5qF">
-                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="42.5"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Language">
-                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                                </buttonConfiguration>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kh-2N-adn">
-                                                <rect key="frame" x="196.5" y="0.0" width="177.5" height="42.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="212.5" height="42.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1kh-2N-adn" secondAttribute="height" multiplier="5:1" id="hxU-Oe-gZq"/>
+                                                </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Rules">
+                                                <buttonConfiguration key="configuration" style="filled" title="Rules" cornerStyle="small">
                                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                 </buttonConfiguration>
                                             </button>
@@ -120,7 +118,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-zO-abF">
                                                             <rect key="frame" x="260" y="0.0" width="114" height="32.5"/>
                                                             <subviews>
-                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-q3-AXs">
+                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y9a-q3-AXs">
                                                                     <rect key="frame" x="0.0" y="0.5" width="94" height="32"/>
                                                                     <connections>
                                                                         <action selector="numberOfPlayersStepperValueChanged:" destination="ln1-HA-uQc" eventType="valueChanged" id="9qA-Cc-gKn"/>
@@ -257,7 +255,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Start" id="PT4-wV-hvh">
                             <connections>
-                                <segue destination="08h-91-s7N" kind="presentation" identifier="GamePlay" modalPresentationStyle="fullScreen" id="bWE-Pl-koA"/>
+                                <segue destination="08h-91-s7N" kind="presentation" identifier="GamePlay" modalPresentationStyle="fullScreen" id="xqJ-ik-xJy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -312,7 +310,9 @@
         <!--GamePlay-->
         <scene sceneID="Ezu-F9-d2m">
             <objects>
-                <viewControllerPlaceholder storyboardName="GamePlay" id="08h-91-s7N" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="GamePlay" id="08h-91-s7N" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="h2E-hW-vVb"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRN-vx-Uiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2995" y="141"/>

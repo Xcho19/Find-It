@@ -11,38 +11,63 @@ protocol LeaderBoardTableViewControllerDelegate: AnyObject {
     func didSelectPlayer(players: [Player])
 }
 
-class LeaderBoardTableViewController: UITableViewController {
-
+final class LeaderBoardTableViewController: UITableViewController {
     weak var delegate: LeaderBoardTableViewControllerDelegate?
 
-    var gameConfigurations = GameCofiguration()
-    var player = Player()
+    // MARK: - Subviews
+
+    @IBOutlet var continueBarButtun: UIBarButtonItem!
+
+    // MARK: - Model
+
+    private var isSelected = false
     var players: [Player] = []
-    var playerScore = 0
+    var wordsShown = 0
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        continueBarButtun.isEnabled = false
     }
+
+    // MARK: - Helpers
+
+    private func checkForWinner(sender: Any?) {
+        if wordsShown >= 5 {
+            guard let highestScore = players.map({ $0.score }).max() else { return }
+
+            players = players.filter { $0.score == highestScore }
+
+            if players.count > 1 {
+                dismiss(animated: true)
+            } else {
+                performSegue(withIdentifier: "WinnerSegue", sender: sender)
+            }
+        } else {
+            dismiss(animated: true)
+        }
+    }
+
+    // MARK: - Callbacks
 
     @IBAction func didTapContinue(_ sender: UIBarButtonItem) {
         delegate?.didSelectPlayer(players: players)
-        dismiss(animated: true)
+        checkForWinner(sender: sender)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
-        -> Int { gameConfigurations.numberOfPlayers }
+    -> Int { players.count }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderBoardCell", for: indexPath)
-        player.name = gameConfigurations.playerNames[indexPath.row]
-        players.append(player)
+        let player = players[indexPath.row]
+        cell.textLabel?.text = player.name
+        cell.detailTextLabel?.text = "\(player.score)"
         cell.selectionStyle = .none
-        for player in players {
-            cell.textLabel?.text = player.name
-            cell.detailTextLabel?.text = "\(player.score)"
-        }
 
         return cell
     }
@@ -50,17 +75,44 @@ class LeaderBoardTableViewController: UITableViewController {
     override func tableView(
         _ tableView: UITableView, didSelectRowAt indexPath: IndexPath
     ) {
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        cell.detailTextLabel?.text = "\(playerScore + 1)"
-        for player in players where player.name == cell.textLabel?.text {
-                player.score += 1
+        guard let cell = tableView.cellForRow(at: indexPath),
+              let playerName = cell.textLabel?.text
+        else { return }
+
+        players.forEach { player in
+            if !isSelected && player.name == playerName {
+                let currentScore = player.score + 1
+                cell.detailTextLabel?.text = "\(currentScore)"
+                player.score = currentScore
+                isSelected.toggle()
+                continueBarButtun.isEnabled = true
+            }
         }
     }
 
     override func tableView(
         _ tableView: UITableView, didDeselectRowAt indexPath: IndexPath
     ) {
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        cell.detailTextLabel?.text = "\(playerScore)"
+        guard let cell = tableView.cellForRow(at: indexPath),
+              let playerName = cell.textLabel?.text
+        else { return }
+
+        players.forEach { player in
+            if isSelected && player.name == playerName {
+                let currentScore = player.score - 1
+                cell.detailTextLabel?.text = "\(currentScore)"
+                player.score = currentScore
+                isSelected.toggle()
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WinnerSegue" {
+            guard let winnerController = segue.destination as? WinnerViewController
+            else { fatalError() }
+
+            winnerController.winnerName = players.first!.name
+        }
     }
 }

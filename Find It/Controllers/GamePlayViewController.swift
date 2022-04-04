@@ -7,18 +7,42 @@
 
 import UIKit
 
-class GamePlayViewController: UIViewController, LeaderBoardTableViewControllerDelegate {
+final class GamePlayViewController: UIViewController {
+    // MARK: - Model
+
+    var newGameConfig = GameCofiguration()
+    private var players = [Player]()
+    private var usedWords = [String]()
+
+    var wordsShown = 0
+    var timer: Timer?
+    var totalTime = 300
+
+    // MARK: - Subviews
 
     @IBOutlet var showWordButton: UIButton!
     @IBOutlet var wordLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
 
-    var newGameConfig = GameCofiguration()
-    var usedWords = [String]()
-    var players: [Player] = []
+    // MARK: - Lifecycle
 
-    var timer: Timer?
-    var totalTime = 300
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setPlayers()
+        showWordButton.setTitle("Show Word", for: .normal)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        let radius = showWordButton.bounds.height / 4
+        if showWordButton.layer.cornerRadius != radius {
+            showWordButton.layer.cornerRadius = radius
+        }
+    }
+
+    // MARK: - Helpers
 
     private func startOtpTimer() {
         self.totalTime = 300
@@ -77,48 +101,40 @@ class GamePlayViewController: UIViewController, LeaderBoardTableViewControllerDe
         if let randomWord = words.shuffled().first(where: {
             !usedWords.contains($0)
         }) {
-        usedWords.append(randomWord)
-        wordLabel.text = randomWord
+            usedWords.append(randomWord)
+            wordLabel.text = randomWord
         } else {
             wordLabel.text = "Out of words"
         }
     }
 
-    func didSelectPlayer(players: [Player]) {
-        self.players = players
+    private func setPlayers() {
+        for playerName in newGameConfig.playerNames {
+            let player = Player()
+            player.name = playerName
+            players.append(player)
+        }
     }
 
-    @IBSegueAction func openLeaderboard(coder: NSCoder) -> LeaderBoardTableViewController? {
-        let leaderboardTableViewController = LeaderBoardTableViewController(coder: coder)
-        leaderboardTableViewController?.delegate = self
-        leaderboardTableViewController?.players = players
+    // MARK: - Callbacks
 
-        return leaderboardTableViewController
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        showWordButton.setTitle("Show Word", for: .normal)
-        showWordButton.setTitle("", for: .highlighted)
-    }
-
-    override func viewDidLayoutSubviews() {
-        showWordButton.titleLabel?.font = UIFont(name: "Chalkboard SE", size: 30)
-        showWordButton.layer.cornerRadius = showWordButton.frame.height / 2
-    }
+    var wordFound: Bool = false { didSet {
+        showWordButton.setTitle(wordFound ? "Found It" : "Show Word", for: .normal)
+    }}
 
     @IBAction func didTapWordButton(_ sender: Any) {
-        if showWordButton.titleLabel?.text == "Show Word" {
-            showWordButton.setTitle("Found It", for: .normal)
-            startOtpTimer()
+
+        wordFound.toggle()
+
+        if wordFound {
             getWordsFor(
                 environment: newGameConfig.environment,
                 difficulty: newGameConfig.difficulty
             )
-        } else if showWordButton.titleLabel?.text == "Found It" {
+            startOtpTimer()
+        } else {
+            wordsShown += 1
             resetTimer()
-            showWordButton.setTitle("Show Word", for: .normal)
             performSegue(withIdentifier: "Leaderboard", sender: sender)
         }
     }
@@ -131,10 +147,16 @@ class GamePlayViewController: UIViewController, LeaderBoardTableViewControllerDe
         if segue.identifier == "Leaderboard" {
             guard let navigationController = segue.destination as? UINavigationController,
                   let leaderBoardController = navigationController.topViewController as? LeaderBoardTableViewController
-                  else { fatalError() }
+            else { fatalError() }
 
-            leaderBoardController.gameConfigurations = newGameConfig
+            leaderBoardController.delegate = self
+            leaderBoardController.players = players
+            leaderBoardController.wordsShown = wordsShown
         }
     }
-
+}
+extension GamePlayViewController: LeaderBoardTableViewControllerDelegate {
+    func didSelectPlayer(players: [Player]) {
+        self.players = players
+    }
 }
