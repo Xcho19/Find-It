@@ -7,11 +7,10 @@
 
 import Foundation
 
-
 struct GameCofiguration {
-    var numberOfPlayers: Int
-    var playerNames: [String]
-    
-    var enviroment: String
-    var difficulty: String
+    var numberOfPlayers: Int = 2
+    var playerNames: [String] = []
+
+    var environment: String = ""
+    var difficulty: String = ""
 }

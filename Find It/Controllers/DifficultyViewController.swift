@@ -14,13 +14,14 @@ protocol DifficultySelectionDelegate: AnyObject {
 class DifficultyViewController: UIViewController {
 
     weak var delegate: DifficultySelectionDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction func didTapDifficulty(_ sender: UIButton) {
-        delegate?.didSelectDifficulty(difficulty: sender.titleLabel?.text ?? "")
+        let selectedDifficulty = sender.titleLabel?.text ?? ""
+        delegate?.didSelectDifficulty(difficulty: selectedDifficulty)
         dismiss(animated: true)
     }
 }

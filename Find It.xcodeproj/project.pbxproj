@@ -7,47 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE2F286E27DFBB6200C43AA3 /* LeaderBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE2F286D27DFBB6200C43AA3 /* LeaderBoard.storyboard */; };
+		EE2F287027DFBBD700C43AA3 /* LeaderBoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F286F27DFBBD700C43AA3 /* LeaderBoardTableViewController.swift */; };
+		EE37F32E27DC234700C96C95 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE37F32D27DC234700C96C95 /* Environment.swift */; };
 		EE40B84D2792CA74009F3E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B84C2792CA74009F3E52 /* AppDelegate.swift */; };
 		EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B84E2792CA74009F3E52 /* SceneDelegate.swift */; };
 		EE40B8542792CA74009F3E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8522792CA74009F3E52 /* Main.storyboard */; };
 		EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8552792CA75009F3E52 /* Assets.xcassets */; };
-		EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */; };
 		EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */; };
 		EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */; };
 		EE54086027A0532200AA3E29 /* Home.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE54085F27A0532200AA3E29 /* Home.plist */; };
-		EE67C11A27ABF0B60058EA13 /* HomeEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */; };
 		EE873E7227B587C70086C19F /* PlayerNames.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE873E7127B587C70086C19F /* PlayerNames.storyboard */; };
 		EE873E7427B588790086C19F /* Environments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE873E7327B588790086C19F /* Environments.storyboard */; };
 		EE873E7627B588F50086C19F /* Difficulties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE873E7527B588F50086C19F /* Difficulties.storyboard */; };
 		EE88C22D2794CE05003CDB38 /* EnvironmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */; };
 		EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */; };
+		EE8B844327E7BE8600A0ABFF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B844227E7BE8600A0ABFF /* Player.swift */; };
 		EE952CB027B2F97400CBFD32 /* PlayerNamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE952CAF27B2F97400CBFD32 /* PlayerNamesViewController.swift */; };
 		EEA846DD27A327E800F63B3A /* Park(Street).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DC27A327E800F63B3A /* Park(Street).plist */; };
 		EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846DE27A328BB00F63B3A /* School(University).plist */; };
-		EEA846E127A3290000F63B3A /* Hotel.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA846E027A3290000F63B3A /* Hotel.plist */; };
+		EED0949527D66BF500147C44 /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED0949427D66BF500147C44 /* GamePlay.storyboard */; };
+		EED0949727D66F6C00147C44 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0949627D66F6C00147C44 /* GamePlayViewController.swift */; };
+		EED2513027E0020000800151 /* App Background.png in Resources */ = {isa = PBXBuildFile; fileRef = EED2512F27E0020000800151 /* App Background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE2F286D27DFBB6200C43AA3 /* LeaderBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeaderBoard.storyboard; sourceTree = "<group>"; };
+		EE2F286F27DFBBD700C43AA3 /* LeaderBoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableViewController.swift; path = "Find It/StoryBoards/LeaderBoardTableViewController.swift"; sourceTree = SOURCE_ROOT; };
+		EE37F32D27DC234700C96C95 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		EE40B8492792CA74009F3E52 /* Find It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE40B84C2792CA74009F3E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE40B84E2792CA74009F3E52 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE40B8532792CA74009F3E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE40B8552792CA75009F3E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EE40B8582792CA75009F3E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE40B85A2792CA75009F3E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfigurationTableViewController.swift; sourceTree = "<group>"; };
 		EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
 		EE54085F27A0532200AA3E29 /* Home.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Home.plist; sourceTree = "<group>"; };
-		EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEnvironment.swift; sourceTree = "<group>"; };
 		EE873E7127B587C70086C19F /* PlayerNames.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerNames.storyboard; sourceTree = "<group>"; };
 		EE873E7327B588790086C19F /* Environments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Environments.storyboard; sourceTree = "<group>"; };
 		EE873E7527B588F50086C19F /* Difficulties.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Difficulties.storyboard; sourceTree = "<group>"; };
 		EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentViewController.swift; sourceTree = "<group>"; };
 		EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		EE8B844227E7BE8600A0ABFF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EE952CAF27B2F97400CBFD32 /* PlayerNamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNamesViewController.swift; sourceTree = "<group>"; };
 		EEA846DC27A327E800F63B3A /* Park(Street).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Park(Street).plist"; sourceTree = "<group>"; };
 		EEA846DE27A328BB00F63B3A /* School(University).plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "School(University).plist"; sourceTree = "<group>"; };
-		EEA846E027A3290000F63B3A /* Hotel.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Hotel.plist; sourceTree = "<group>"; };
+		EED0949427D66BF500147C44 /* GamePlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GamePlay.storyboard; sourceTree = "<group>"; };
+		EED0949627D66F6C00147C44 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
+		EED2512F27E0020000800151 /* App Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Background.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +89,14 @@
 			isa = PBXGroup;
 			children = (
 				EE873E7027B5851E0086C19F /* StoryBoards */,
-				EE88C2302794D250003CDB38 /* Controller */,
+				EE88C2302794D250003CDB38 /* Controllers */,
 				EE4258B5279AD99800EFFBFA /* Model */,
 				EEA846DB27A3277E00F63B3A /* Property Lists */,
 				EE40B84E2792CA74009F3E52 /* SceneDelegate.swift */,
 				EE40B84C2792CA74009F3E52 /* AppDelegate.swift */,
 				EE40B8552792CA75009F3E52 /* Assets.xcassets */,
-				EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */,
 				EE40B85A2792CA75009F3E52 /* Info.plist */,
+				EED2512F27E0020000800151 /* App Background.png */,
 			);
 			path = "Find It";
 			sourceTree = "<group>";
@@ -96,8 +104,9 @@
 		EE4258B5279AD99800EFFBFA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE8B844227E7BE8600A0ABFF /* Player.swift */,
 				EE4258B6279ADA0C00EFFBFA /* GameConfiguration.swift */,
-				EE67C11927ABF0B60058EA13 /* HomeEnvironment.swift */,
+				EE37F32D27DC234700C96C95 /* Environment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -105,34 +114,53 @@
 		EE873E7027B5851E0086C19F /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				EE40B8522792CA74009F3E52 /* Main.storyboard */,
-				EE873E7527B588F50086C19F /* Difficulties.storyboard */,
-				EE873E7327B588790086C19F /* Environments.storyboard */,
-				EE873E7127B587C70086C19F /* PlayerNames.storyboard */,
+				EED2512D27DFEEF700800151 /* Game Config Scenes */,
+				EED2512E27DFEF2A00800151 /* Game Play Scenes */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
-		EE88C2302794D250003CDB38 /* Controller */ = {
+		EE88C2302794D250003CDB38 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE2F286F27DFBBD700C43AA3 /* LeaderBoardTableViewController.swift */,
+				EED0949627D66F6C00147C44 /* GamePlayViewController.swift */,
 				EE88C22E2794D22E003CDB38 /* DifficultyViewController.swift */,
 				EE40B8602793773A009F3E52 /* GameConfigurationTableViewController.swift */,
 				EE952CAF27B2F97400CBFD32 /* PlayerNamesViewController.swift */,
 				EE88C22C2794CE05003CDB38 /* EnvironmentViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		EEA846DB27A3277E00F63B3A /* Property Lists */ = {
 			isa = PBXGroup;
 			children = (
 				EE54085F27A0532200AA3E29 /* Home.plist */,
-				EEA846E027A3290000F63B3A /* Hotel.plist */,
 				EEA846DC27A327E800F63B3A /* Park(Street).plist */,
 				EEA846DE27A328BB00F63B3A /* School(University).plist */,
 			);
 			path = "Property Lists";
+			sourceTree = "<group>";
+		};
+		EED2512D27DFEEF700800151 /* Game Config Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EE40B8522792CA74009F3E52 /* Main.storyboard */,
+				EE873E7527B588F50086C19F /* Difficulties.storyboard */,
+				EE873E7327B588790086C19F /* Environments.storyboard */,
+				EE873E7127B587C70086C19F /* PlayerNames.storyboard */,
+			);
+			path = "Game Config Scenes";
+			sourceTree = "<group>";
+		};
+		EED2512E27DFEF2A00800151 /* Game Play Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EED0949427D66BF500147C44 /* GamePlay.storyboard */,
+				EE2F286D27DFBB6200C43AA3 /* LeaderBoard.storyboard */,
+			);
+			path = "Game Play Scenes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +170,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE40B85D2792CA75009F3E52 /* Build configuration list for PBXNativeTarget "Find It" */;
 			buildPhases = (
+				EEEA6F2527CEADA200568ECC /* Run SwiftLint */,
 				EE40B8452792CA74009F3E52 /* Sources */,
 				EE40B8462792CA74009F3E52 /* Frameworks */,
 				EE40B8472792CA74009F3E52 /* Resources */,
@@ -195,18 +224,40 @@
 			files = (
 				EE54086027A0532200AA3E29 /* Home.plist in Resources */,
 				EEA846DD27A327E800F63B3A /* Park(Street).plist in Resources */,
-				EE40B8592792CA75009F3E52 /* LaunchScreen.storyboard in Resources */,
+				EE2F286E27DFBB6200C43AA3 /* LeaderBoard.storyboard in Resources */,
+				EED2513027E0020000800151 /* App Background.png in Resources */,
 				EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */,
 				EE873E7427B588790086C19F /* Environments.storyboard in Resources */,
+				EED0949527D66BF500147C44 /* GamePlay.storyboard in Resources */,
 				EE873E7627B588F50086C19F /* Difficulties.storyboard in Resources */,
 				EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */,
 				EE40B8542792CA74009F3E52 /* Main.storyboard in Resources */,
 				EE873E7227B587C70086C19F /* PlayerNames.storyboard in Resources */,
-				EEA846E127A3290000F63B3A /* Hotel.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EEEA6F2527CEADA200568ECC /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE40B8452792CA74009F3E52 /* Sources */ = {
@@ -217,10 +268,13 @@
 				EE88C22F2794D22E003CDB38 /* DifficultyViewController.swift in Sources */,
 				EE4258B7279ADA0C00EFFBFA /* GameConfiguration.swift in Sources */,
 				EE40B84D2792CA74009F3E52 /* AppDelegate.swift in Sources */,
+				EE37F32E27DC234700C96C95 /* Environment.swift in Sources */,
 				EE40B8612793773A009F3E52 /* GameConfigurationTableViewController.swift in Sources */,
-				EE67C11A27ABF0B60058EA13 /* HomeEnvironment.swift in Sources */,
 				EE952CB027B2F97400CBFD32 /* PlayerNamesViewController.swift in Sources */,
+				EED0949727D66F6C00147C44 /* GamePlayViewController.swift in Sources */,
 				EE40B84F2792CA74009F3E52 /* SceneDelegate.swift in Sources */,
+				EE8B844327E7BE8600A0ABFF /* Player.swift in Sources */,
+				EE2F287027DFBBD700C43AA3 /* LeaderBoardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,14 +287,6 @@
 				EE40B8532792CA74009F3E52 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EE40B8572792CA75009F3E52 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE40B8582792CA75009F3E52 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
