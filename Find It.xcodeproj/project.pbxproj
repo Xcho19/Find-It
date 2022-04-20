@@ -32,6 +32,7 @@
 		EED0949527D66BF500147C44 /* GamePlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED0949427D66BF500147C44 /* GamePlay.storyboard */; };
 		EED0949727D66F6C00147C44 /* GamePlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0949627D66F6C00147C44 /* GamePlayViewController.swift */; };
 		EED2513027E0020000800151 /* App Background.png in Resources */ = {isa = PBXBuildFile; fileRef = EED2512F27E0020000800151 /* App Background.png */; };
+		EEF202CB27FC6ED6005384DC /* Rules.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF202CA27FC6ED6005384DC /* Rules.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EED0949427D66BF500147C44 /* GamePlay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GamePlay.storyboard; sourceTree = "<group>"; };
 		EED0949627D66F6C00147C44 /* GamePlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayViewController.swift; sourceTree = "<group>"; };
 		EED2512F27E0020000800151 /* App Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Background.png"; sourceTree = "<group>"; };
+		EEF202CA27FC6ED6005384DC /* Rules.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Rules.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				EE873E7527B588F50086C19F /* Difficulties.storyboard */,
 				EE873E7327B588790086C19F /* Environments.storyboard */,
 				EE873E7127B587C70086C19F /* PlayerNames.storyboard */,
+				EEF202CA27FC6ED6005384DC /* Rules.storyboard */,
 			);
 			path = "Game Config Scenes";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				EEA846DF27A328BB00F63B3A /* School(University).plist in Resources */,
 				EE873E7427B588790086C19F /* Environments.storyboard in Resources */,
 				EED0949527D66BF500147C44 /* GamePlay.storyboard in Resources */,
+				EEF202CB27FC6ED6005384DC /* Rules.storyboard in Resources */,
 				EE2C953B27ED1E8800FC8EA1 /* Winner.storyboard in Resources */,
 				EE873E7627B588F50086C19F /* Difficulties.storyboard in Resources */,
 				EE40B8562792CA75009F3E52 /* Assets.xcassets in Resources */,

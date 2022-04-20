@@ -68,6 +68,9 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Rules" cornerStyle="small">
                                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="K3w-OI-Ere" kind="show" id="9wS-wg-qEd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -87,6 +90,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="35" y="64"/>
+        </scene>
+        <!--Rules-->
+        <scene sceneID="fxp-6Q-nBE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Rules" id="K3w-OI-Ere" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AVE-Ds-cVy"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khe-J8-NJR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="498"/>
         </scene>
         <!--Game Configurations-->
         <scene sceneID="L6L-KB-7Dx">

@@ -11,3 +11,9 @@ class Player {
     var name: String = ""
     var score: Int = 0
 }
+
+extension Player: Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        lhs.name == rhs.name
+    }
+}

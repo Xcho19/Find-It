@@ -16,11 +16,13 @@ final class LeaderBoardTableViewController: UITableViewController {
 
     // MARK: - Subviews
 
-    @IBOutlet var continueBarButtun: UIBarButtonItem!
+    @IBOutlet var continueBarButton: UIBarButtonItem!
 
     // MARK: - Model
 
     private var isSelected = false
+    var selectedPlayer: Player?
+    var deSelectedPlayer: Player?
     var players: [Player] = []
     var wordsShown = 0
 
@@ -29,7 +31,7 @@ final class LeaderBoardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        continueBarButtun.isEnabled = false
+        continueBarButton.isEnabled = false
     }
 
     // MARK: - Helpers
@@ -75,36 +77,32 @@ final class LeaderBoardTableViewController: UITableViewController {
     override func tableView(
         _ tableView: UITableView, didSelectRowAt indexPath: IndexPath
     ) {
-        guard let cell = tableView.cellForRow(at: indexPath),
-              let playerName = cell.textLabel?.text
+        guard
+            let cell = tableView.cellForRow(at: indexPath)
         else { return }
 
-        players.forEach { player in
-            if !isSelected && player.name == playerName {
-                let currentScore = player.score + 1
-                cell.detailTextLabel?.text = "\(currentScore)"
-                player.score = currentScore
-                isSelected.toggle()
-                continueBarButtun.isEnabled = true
-            }
-        }
+        if selectedPlayer == players[indexPath.row] { return }
+
+        selectedPlayer = players[indexPath.row]
+
+        selectedPlayer?.score += 1
+        cell.detailTextLabel?.text = "\(selectedPlayer?.score ?? 0)"
+        continueBarButton.isEnabled = true
     }
 
     override func tableView(
         _ tableView: UITableView, didDeselectRowAt indexPath: IndexPath
     ) {
-        guard let cell = tableView.cellForRow(at: indexPath),
-              let playerName = cell.textLabel?.text
+        guard
+            let cell = tableView.cellForRow(at: indexPath)
         else { return }
 
-        players.forEach { player in
-            if isSelected && player.name == playerName {
-                let currentScore = player.score - 1
-                cell.detailTextLabel?.text = "\(currentScore)"
-                player.score = currentScore
-                isSelected.toggle()
-            }
-        }
+        if deSelectedPlayer == players[indexPath.row] { return }
+
+        deSelectedPlayer = players[indexPath.row]
+
+        deSelectedPlayer?.score -= 1
+        cell.detailTextLabel?.text = "\(selectedPlayer?.score ?? 0)"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

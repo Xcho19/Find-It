@@ -137,6 +137,15 @@ final class GamePlayViewController: UIViewController {
             resetTimer()
             performSegue(withIdentifier: "Leaderboard", sender: sender)
         }
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 0.7,
+            initialSpringVelocity: 0.1,
+            options: []) {
+                self.showWordButton.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+                self.showWordButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {

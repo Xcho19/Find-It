@@ -55,7 +55,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="continueBarButtun" destination="cfR-lg-n2E" id="ceT-2K-LOk"/>
+                        <outlet property="continueBarButton" destination="cfR-lg-n2E" id="kgN-3w-Hze"/>
                         <segue destination="r4I-AU-SED" kind="presentation" identifier="WinnerSegue" modalPresentationStyle="fullScreen" id="aPY-hf-kxN"/>
                     </connections>
                 </tableViewController>
